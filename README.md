@@ -36,8 +36,10 @@ I use this on Arch Linux (inside WSL! so you can use that if you want) with the
 
 [1] Admittedly, you can write your code outside of A-IDE and then copy/reopen
 the file inside the IDE.
+
 [2] If you have Arduino Uno, then it could work OOTB, since I use a clone of
 Arduino Uno.
+
 [3] The example produces a 3842 byte binary, while my solution gives me a 4030
 bytes binary. That's about 5% more. Admittedly that's not too much, but it
 could matter on a system where every byte counts.
