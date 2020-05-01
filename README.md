@@ -34,6 +34,7 @@ most of the commands directly from the IDE and that seems to work.
 I use this on Arch Linux (inside WSL! so you can use that if you want) with the
 `arduino-avr-core` package installed.
 
+## Notes
 [1] Admittedly, you can write your code outside of A-IDE and then copy/reopen
 the file inside the IDE.
 
