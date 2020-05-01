@@ -1,4 +1,5 @@
 .DEFAULT_GOAL := all
+SERIAL_PORT=3
 out.bin: main.cpp core.a
 	# Have to use the first include so that clangd doesn't get confused
 	avr-g++ -std=c++17 -I /usr/avr/include -I /usr/share/arduino/hardware/archlinux-arduino/avr/cores/arduino -I /usr/share/arduino/hardware/archlinux-arduino/avr/variants/standard -DF_CPU=16000000 -mmcu=atmega328p -O3 -Wl,--gc-sections -ffunction-sections  -fdata-sections main.cpp core.a -o out.bin
@@ -7,8 +8,9 @@ out.bin: main.cpp core.a
 out.hex: out.bin
 	avr-objcopy -j .text -j .data -O ihex out.bin out.hex
 
+.PHONY:
 upload: out.hex
-	avrdude-win '-CC:\Program Files (x86)\Arduino\hardware\tools\avr/etc/avrdude.conf' -v -patmega328p -carduino -PCOM3 -b115200 -D -Uflash:w:"$$(wslpath -aw "./out.hex")":i
+	sudo avrdude -v -p atmega328p -c arduino -P /dev/ttyS$(SERIAL_PORT) -b 115200 -D -U flash\:w:out.hex\:i
 
 clean:
 	rm -rf out.bin out.hex core.a core_dir
