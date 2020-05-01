@@ -24,4 +24,5 @@ most of the commands directly from the IDE and that seems to work.
   functionality could probably be implemented here too, but I don't mind
   compiling my own `main` function this functionality (although it maybe a good
   idea to look into how `main` is compiled in A-IDE to see where I get those
-  additional bytes).
+  additional bytes). The example does mimic the A-IDE approach with the setup
+  and loop functions.

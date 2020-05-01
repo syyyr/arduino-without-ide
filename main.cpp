@@ -29,25 +29,35 @@ long square(long x)
     return x * x;
 }
 
+lib::string toPrint(300);
+long counter = 0;
+
+void setup()
+{
+    Serial.begin(9600);
+}
+
+void loop()
+{
+    sprintf(toPrint.get(), "%ld * %ld = %ld", counter, counter, square(counter));
+    Serial.println(toPrint.get());
+    counter++;
+}
+
 int main(void)
 {
     init();
 
     initVariant();
 
-#if defined(USBCON)
+#if defined(USBCON) // This might only be useful for the IDE, it matter if it's here tho, since it's inside this ifdef
     USBDevice.attach();
 #endif
 
-    Serial.begin(9600);
+    setup();
 
-    lib::string toPrint(300);
-    long counter = 0;
     while (true) {
-        sprintf(toPrint.get(), "%ld * %ld = %ld", counter, counter, square(counter));
-        Serial.println(toPrint.get());
-        counter++;
-
+        loop();
         if (serialEventRun) serialEventRun();
     }
 
