@@ -1,12 +1,14 @@
-# Arduino developing with Arduino IDE
+# Arduino developing without Arduino IDE
 
-I don't like IDEs (and especially the very trashy Arduino IDE editor), so I
-tried to recreate what Arduino IDE does for you (i. e. compile stuff and upload
+I don't like IDEs (and especially the very trashy Arduino IDE (A-IDE) editor), so I
+tried to recreate what A-IDE does for you (i. e. compile stuff and upload
 stuff). The biggest problem was compiling the Arduino core library. I copied
 most of the commands directly from the IDE and that seems to work.
 
 ## Advantages
 - You can use your favorite editor to write code.
+- You can use whatever compiler you want. I use GCC 9 which gives me a lot of
+  C++17 features. The A-IDE in my PC uses GCC 7.
 - You can use the command line to develop instead of being dependent on a GUI.
 
 ## Disadvantages
@@ -26,3 +28,7 @@ most of the commands directly from the IDE and that seems to work.
   idea to look into how `main` is compiled in A-IDE to see where I get those
   additional bytes). The example does mimic the A-IDE approach with the setup
   and loop functions.
+
+## Dependencies
+I use this on Arch Linux (inside WSL! so you can use that if you want) with the
+`arduino-avr-core` package installed.
