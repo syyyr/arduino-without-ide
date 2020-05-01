@@ -1,7 +1,7 @@
 .DEFAULT_GOAL := all
 out.bin: main.cpp core.a
 	# Have to use the first include so that clangd doesn't get confused
-	avr-gcc -I /usr/avr/include -I /usr/share/arduino/hardware/archlinux-arduino/avr/cores/arduino -I /usr/share/arduino/hardware/archlinux-arduino/avr/variants/standard -DF_CPU=16000000 -mmcu=atmega328p -Os -Wl,--gc-sections -ffunction-sections  -fdata-sections main.cpp core.a -o out.bin
+	avr-g++ -std=c++17 -I /usr/avr/include -I /usr/share/arduino/hardware/archlinux-arduino/avr/cores/arduino -I /usr/share/arduino/hardware/archlinux-arduino/avr/variants/standard -DF_CPU=16000000 -mmcu=atmega328p -O3 -Wl,--gc-sections -ffunction-sections  -fdata-sections main.cpp core.a -o out.bin
 	avr-strip out.bin
 
 out.hex: out.bin
