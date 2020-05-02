@@ -22,13 +22,11 @@ most of the commands directly from the IDE and that seems to work.
 - You lose some of the functionality of the Arduino "language". For example,
   you can't just define a loop and a setup function, you have to structure your
   program as a normal C program (so you have to supply your own `main`
-  function). I abstracted most of the Arduino `main` function into the
-  `arduino_decls.hpp` file, but not everything can be put there. The exact
-  functionality could probably be implemented here too, but I don't mind
-  compiling my own `main` function this functionality (although it maybe a good
-  idea to look into how `main` is compiled in A-IDE to see where I get those
-  additional bytes). The example does mimic the A-IDE approach with the setup
-  and loop functions.
+  function). The exact functionality could probably be implemented here too,
+  but I don't mind compiling my own `main` function this functionality
+  (although it maybe a good idea to look into how `main` is compiled in A-IDE
+  to see where I get those additional bytes). The example does mimic the A-IDE
+  approach with the setup and loop functions.
 
 ## Dependencies
 I use this on Arch Linux (inside WSL! so you can use that if you want) with the

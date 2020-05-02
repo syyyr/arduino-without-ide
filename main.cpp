@@ -1,5 +1,4 @@
 #include <Arduino.h>
-#include "arduino_decls.hpp"
 
 namespace lib {
 class string {
@@ -46,19 +45,10 @@ void loop()
 
 int main(void)
 {
-    init();
-
-    initVariant();
-
-#if defined(USBCON) // This might only be useful for the IDE, it matter if it's here tho, since it's inside this ifdef
-    USBDevice.attach();
-#endif
-
     setup();
 
     while (true) {
         loop();
-        if (serialEventRun) serialEventRun();
     }
 
     return 0;
