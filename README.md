@@ -15,11 +15,12 @@ most of the commands directly from the IDE and that seems to work.
 - This might not work for everyone and most likely won't work
   out-of-the-box[2]. At least some of the values inside the Makefile will have
   to be changed to match your device.
-- The resulting binary file is a little bigger than what the IDE produces[3].
+- The resulting binary file is a little different than what the IDE produces.
   This could be solved by looking more into how A-IDE compiles things. Also,
-  A-IDE does some clever pre-proccessing stuff, so that might be the cause of
-  the increased code size.
-- You lose some of the functionality of the Arduino "language". For example,
+  A-IDE does some pre-proccessing to the source file, so will have to look into
+  that, so that everything works. The IDE probably adds some init functions
+  based on what you use in your program.
+- You lose (some) of the functionality of the Arduino "language". For example,
   you can't just define a loop and a setup function, you have to structure your
   program as a normal C program (so you have to supply your own `main`
   function). The exact functionality could probably be implemented here too,
@@ -38,8 +39,3 @@ the file inside the IDE.
 
 [2] If you have Arduino Uno, then it could work OOTB, since I use a clone of
 Arduino Uno.
-
-[3] The example produces a 3490 byte binary, while my solution gives me a 3712
-bytes binary. That's about 6% more. Admittedly that's not too much, but it
-could matter on a system where every byte counts. Also, with more complex
-programs, the difference could increase.

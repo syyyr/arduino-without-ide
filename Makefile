@@ -4,7 +4,7 @@ MMCU=atmega328p
 CPU_CLOCK=16000000
 out.bin: main.cpp core.a
 	# Have to use the first include so that clangd doesn't get confused
-	avr-g++ -std=c++17 -I /usr/avr/include -I /usr/share/arduino/hardware/archlinux-arduino/avr/cores/arduino -I /usr/share/arduino/hardware/archlinux-arduino/avr/variants/standard -DF_CPU=$(CPU_CLOCK) -mmcu=$(MMCU) -Os -Wl,--gc-sections -ffunction-sections -fdata-sections main.cpp core.a -o out.bin
+	avr-g++ -std=c++17 -I /usr/avr/include -I /usr/share/arduino/hardware/archlinux-arduino/avr/cores/arduino -I /usr/share/arduino/hardware/archlinux-arduino/avr/variants/standard -DF_CPU=$(CPU_CLOCK) -mmcu=$(MMCU) -Os -Wl,--gc-sections -flto -ffunction-sections -fdata-sections main.cpp core.a -o out.bin
 	avr-strip out.bin
 
 out.hex: out.bin
