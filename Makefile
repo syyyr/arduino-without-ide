@@ -12,7 +12,7 @@ out.hex: out.bin
 
 .PHONY:
 upload: out.hex
-	sudo avrdude -v -p atmega328p -c arduino -P /dev/ttyS$(SERIAL_PORT) -b 115200 -D -U flash\:w:out.hex\:i
+	avrdude -v -p atmega328p -c arduino -P /dev/ttyS$(SERIAL_PORT) -b 115200 -D -U flash\:w:out.hex\:i
 
 clean:
 	rm -rf out.bin out.hex core.a core_dir
