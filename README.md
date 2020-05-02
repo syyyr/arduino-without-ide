@@ -39,6 +39,7 @@ the file inside the IDE.
 [2] If you have Arduino Uno, then it could work OOTB, since I use a clone of
 Arduino Uno.
 
-[3] The example produces a 3842 byte binary, while my solution gives me a 4030
-bytes binary. That's about 5% more. Admittedly that's not too much, but it
-could matter on a system where every byte counts.
+[3] The example produces a 3490 byte binary, while my solution gives me a 3712
+bytes binary. That's about 6% more. Admittedly that's not too much, but it
+could matter on a system where every byte counts. Also, with more complex
+programs, the difference could increase.
