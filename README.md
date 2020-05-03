@@ -24,10 +24,10 @@ most of the commands directly from the IDE and that seems to work.
   you can't just define a loop and a setup function, you have to structure your
   program as a normal C program (so you have to supply your own `main`
   function). The exact functionality could probably be implemented here too,
-  but I don't mind compiling my own `main` function this functionality
-  (although it maybe a good idea to look into how `main` is compiled in A-IDE
-  to see where I get those additional bytes). The example does mimic the A-IDE
-  approach with the setup and loop functions.
+  but I don't mind compiling my own `main` function. (although it maybe a good
+  idea to look into how `main` is compiled in A-IDE to see where I get those
+  additional bytes). The example does mimic the A-IDE approach with the setup
+  and loop functions.
 
 ## Dependencies
 I use this on Arch Linux (inside WSL! so you can use that if you want) with the

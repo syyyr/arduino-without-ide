@@ -45,6 +45,9 @@ void loop()
 
 int main(void)
 {
+    // This function needs to be called for timer stuff to work.
+    init();
+
     setup();
 
     while (true) {
