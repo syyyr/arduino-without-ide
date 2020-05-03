@@ -2,7 +2,7 @@
 
 *Note: this is probably obsolete because this exists:
 https://github.com/sudar/Arduino-Makefile. My solution is very simple, and the
-other probably works pretty well and pretty similar to the IDE.*
+other probably works pretty well and is more similar to the IDE.*
 
 I don't like IDEs (and especially the very trashy Arduino IDE (A-IDE) editor), so I
 tried to recreate what A-IDE does for you (i. e. compile stuff and upload
